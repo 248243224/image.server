@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;Configuration\nlog.config&quot;  &quot;$(TargetDir)nlog.config&quot;" />
+    <Exec Command="copy /Y &quot;Configuration\nlog.config&quot;  &quot;$(TargetDir)nlog.config&quot;&#xD;&#xA;copy /Y &quot;dockerfile&quot;  &quot;$(TargetDir)dockerfile&quot;" />
   </Target>
 
 </Project>

@@ -1,0 +1,7 @@
+# Build runtime image
+FROM microsoft/aspnetcore   
+WORKDIR /app
+COPY . ./
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "./Image.Server.dll"]
+

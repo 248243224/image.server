@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Image.Server.Middleware
 {
-    public class GlobErrorHandlingMiddleware
+    public class GlobalErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILog _logger;
 
-        public GlobErrorHandlingMiddleware(RequestDelegate next, ILog logger)
+        public GlobalErrorHandlingMiddleware(RequestDelegate next, ILog logger)
         {
             this._next = next;
             _logger = logger;
@@ -56,7 +56,7 @@ namespace Image.Server.Middleware
     {
         public static IApplicationBuilder UseGlobErrorHandlingMiddleware(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<GlobErrorHandlingMiddleware>();
+            return builder.UseMiddleware<GlobalErrorHandlingMiddleware>();
         }
     }
 
