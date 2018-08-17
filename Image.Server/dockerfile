@@ -1,7 +1,7 @@
 # Build runtime image
-FROM microsoft/aspnetcore
-COPY . .
-WORKDIR /image.server/
-ENV ASPNETCORE_URLS http://+:8016
-EXPOSE 8016
-ENTRYPOINT ["dotnet", "image.server.dll"]
+FROM microsoft/aspnetcore   
+WORKDIR /app
+COPY . ./
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "./Image.Server.dll"]
+
