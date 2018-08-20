@@ -24,8 +24,16 @@
     <ProjectReference Include="..\Image.Model\Image.Model.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;Configuration\nlog.config&quot;  &quot;$(TargetDir)nlog.config&quot;&#xD;&#xA;copy /Y &quot;dockerfile&quot;  &quot;$(TargetDir)dockerfile&quot;" />
-  </Target>
+  <ItemGroup>
+    <Content Update="Configuration\nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

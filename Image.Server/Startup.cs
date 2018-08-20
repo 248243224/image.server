@@ -35,7 +35,7 @@ namespace Image.Server
             app.UseStaticFiles();
             app.UseGlobErrorHandlingMiddleware();
             //load nlog config
-            NLog.LogManager.LoadConfiguration("nlog.config");
+            NLog.LogManager.LoadConfiguration("Configuration/nlog.config");
 
             if (env.IsDevelopment())
             {
