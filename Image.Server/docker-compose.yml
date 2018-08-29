@@ -1,7 +1,7 @@
 version: '3'
 services:
   image_server_1:
-    image: 'imageserver-v1'
+    image: 'imageserver-latest'
     build:
       context: .
       dockerfile: dockerfile   
@@ -15,9 +15,9 @@ services:
       - /qin/SiteLogs/Image.Server/8086:/app/logs
     logging:
       options:
-        max-size: 50m
+        max-size: 50m 
   image_server_2:
-    image: 'imageserver-v1'
+    image: 'imageserver-latest'
     build:
       context: .
       dockerfile: dockerfile   
@@ -33,7 +33,7 @@ services:
       options:
         max-size: 50m
   image_server_3:
-    image: 'imageserver-v1'
+    image: 'imageserver-latest'
     build:
       context: .
       dockerfile: dockerfile   
