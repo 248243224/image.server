@@ -46,7 +46,7 @@ namespace Image.Server
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=home}/{action=Index}/{id?}");
+                    template: "api/{controller=home}/{action=index}/{id?}");
             });
             // This must be excuted after app.usemvc in order to catch glob exception correctly
             app.UseGlobErrorHandlingMiddleware();
