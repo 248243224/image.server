@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Image.Server.Controllers
 {
-    [Route("api/[controller]")]
     public class HomeController : Controller
     {
         private readonly ILog _logger;
