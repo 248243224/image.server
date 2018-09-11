@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Image.Common.Log;
 using Microsoft.Extensions.Logging;
 using Image.Server.Middleware;
+using Image.Common.Cache;
+using Image.Common.Redis;
 
 namespace Image.Server
 {
@@ -27,6 +29,7 @@ namespace Image.Server
             services.AddMvc();
             //add log provider
             services.AddSingleton<ILog, Logger>();
+            services.AddSingleton<ICache, RedisClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
